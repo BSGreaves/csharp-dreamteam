@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Your job is to pick 5 of your teammates in your cohort and build a class for each one. 
-// Each teammate should have the following properties/methods. Build one for yourself, as well.
+// Your job is to pick 5 of your ITeammates in your cohort and build a class for each one. 
+// Each ITeammate should have the following properties/methods. Build one for yourself, as well.
 // Specialty property - This holds the technology that the person enjoys the most.
 // FirstName property
 // LastName property
@@ -10,11 +10,11 @@ using System.Collections.Generic;
 // Work() method - This will write a comical message to the console that describes the work they will do on a group project, based on their speciality.
 // Once you're done, you should have 6 different types in total, each with the properties and methods above.
 
-// Create two groups (i.e. List) that will hold three teammates each. These two lists represent one team that will be the server side team, and one that will be the client side team.
-// Instantiate one instance of each of your teammates.
-// Put your teammates into the appropriate team.
+// Create two groups (i.e. List) that will hold three ITeammates each. These two lists represent one team that will be the server side team, and one that will be the client side team.
+// Instantiate one instance of each of your ITeammates.
+// Put your ITeammates into the appropriate team.
 
-// Write two foreach loops that iterate over each List and makes each of the teammates do their work.
+// Write two foreach loops that iterate over each List and makes each of the ITeammates do their work.
 
 namespace dreamteam
 {
@@ -22,8 +22,8 @@ namespace dreamteam
     {
         static void Main(string[] args)
         {
-           List <TeamMate> ClientSide = new List <TeamMate>();
-           List <TeamMate> ServerSide = new List <TeamMate>();
+           List <ITeammate> ClientSide = new List <ITeammate>();
+           List <ITeammate> ServerSide = new List <ITeammate>();
            Mitchell MitchellBlom = new Mitchell ();
            Anessa AnessaOrtner = new Anessa();
            Ben BenGreaves = new Ben();
@@ -36,18 +36,18 @@ namespace dreamteam
            ServerSide.Add(AnessaOrtner);
            ServerSide.Add(BenGreaves);
            ServerSide.Add(MitchellBlom);
-           foreach(TeamMate member in ServerSide)
+           foreach(ITeammate member in ServerSide)
            {
                member.Work();
            }
-           foreach(TeamMate member in ClientSide)
+           foreach(ITeammate member in ClientSide)
            {
                member.Work();
            }
         }
     }
 
-    interface TeamMate 
+    interface ITeammate 
     {
         string Speciality { get; set; }
         string FirstName { get; set; }
@@ -55,7 +55,7 @@ namespace dreamteam
         string FullName();
         void Work();
     }
-    class Mitchell : TeamMate
+    class Mitchell : ITeammate
     {
         public string Speciality { get; set; } = "Motivating the team";
         public string FirstName { get; set; } = "Mitchell";
@@ -73,7 +73,7 @@ namespace dreamteam
         public Mitchell () {}
     }
 
-    class Ben : TeamMate
+    class Ben : ITeammate
     {
         public string Speciality { get; set; } = "Planning and Structure";
         public string FirstName { get; set; } = "Ben";
@@ -90,7 +90,7 @@ namespace dreamteam
         }
         public Ben () {}
     }
-    class Anessa : TeamMate
+    class Anessa : ITeammate
     {
         public string Speciality { get; set; } = "Complex logic";
         public string FirstName { get; set; } = "Anessa";
@@ -107,7 +107,7 @@ namespace dreamteam
         }
         public Anessa () {}
     }
-    class Dwayne : TeamMate
+    class Dwayne : ITeammate
     {
         public string Speciality { get; set; } = "Dilligent coding";
         public string FirstName { get; set; } = "Dwayne";
@@ -124,7 +124,7 @@ namespace dreamteam
         }
         public Dwayne () {}
     }
-    class Izzy : TeamMate
+    class Izzy : ITeammate
     {
         public string Speciality { get; set; } = "Design";
         public string FirstName { get; set; } = "Isabel";
@@ -141,7 +141,7 @@ namespace dreamteam
         }
         public Izzy () {}
     }
-    class Geoff : TeamMate
+    class Geoff : ITeammate
     {
         public string Speciality { get; set; } = "Jack of all trades";
         public string FirstName { get; set; } = "Geoff";
